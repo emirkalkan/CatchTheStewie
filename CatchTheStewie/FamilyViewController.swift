@@ -18,6 +18,7 @@ class FamilyViewController: UIViewController, UITableViewDelegate, UITableViewDa
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        //navigationController?.navigationBar.topItem?.hidesBackButton = true //for hiding back button
         navigationItem.title = "Family Guy (Griffin Family)"
                
         tableView.dataSource = self
@@ -48,7 +49,7 @@ class FamilyViewController: UIViewController, UITableViewDelegate, UITableViewDa
         return cell
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) { //when row selected
         chosenGriffin = myGriffins[indexPath.row]
         self.performSegue(withIdentifier: "toSecondVC", sender: nil)
     }

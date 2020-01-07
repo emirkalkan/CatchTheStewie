@@ -12,6 +12,7 @@
 		5F122747238B621800F08811 /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F122746238B621800F08811 /* ImageCell.swift */; };
 		5F363667238C322A0019DAED /* LogoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F363666238C322A0019DAED /* LogoutViewController.swift */; };
 		5F37BDEF238B2746000AE10B /* UploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F37BDEE238B2746000AE10B /* UploadViewController.swift */; };
+		5F8DBAED23C27D34007A4166 /* AddDoneKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8DBAEC23C27D34007A4166 /* AddDoneKeyboard.swift */; };
 		5FB3215023833ECB007BF9BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB3214F23833ECB007BF9BA /* AppDelegate.swift */; };
 		5FB3215223833ECB007BF9BA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB3215123833ECB007BF9BA /* SceneDelegate.swift */; };
 		5FB3215423833ECB007BF9BA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB3215323833ECB007BF9BA /* ViewController.swift */; };
@@ -34,6 +35,7 @@
 		5F122746238B621800F08811 /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
 		5F363666238C322A0019DAED /* LogoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutViewController.swift; sourceTree = "<group>"; };
 		5F37BDEE238B2746000AE10B /* UploadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadViewController.swift; sourceTree = "<group>"; };
+		5F8DBAEC23C27D34007A4166 /* AddDoneKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDoneKeyboard.swift; sourceTree = "<group>"; };
 		5FB3214C23833ECB007BF9BA /* CatchTheStewie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CatchTheStewie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FB3214F23833ECB007BF9BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5FB3215123833ECB007BF9BA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -89,23 +91,24 @@
 			children = (
 				5FB3214F23833ECB007BF9BA /* AppDelegate.swift */,
 				5FB3215123833ECB007BF9BA /* SceneDelegate.swift */,
-				5FB3215323833ECB007BF9BA /* ViewController.swift */,
 				5FB3215523833ECB007BF9BA /* Main.storyboard */,
-				5FB3215823833ECE007BF9BA /* Assets.xcassets */,
 				5FB3215A23833ECE007BF9BA /* LaunchScreen.storyboard */,
+				5FB3215823833ECE007BF9BA /* Assets.xcassets */,
 				5FB3215D23833ECE007BF9BA /* Info.plist */,
 				5FB3216323834186007BF9BA /* GoogleService-Info.plist */,
+				5FB3215323833ECB007BF9BA /* ViewController.swift */,
 				5FB3216523834AEC007BF9BA /* SignUpViewController.swift */,
 				5FB3216723834B00007BF9BA /* LoginViewController.swift */,
+				5FB3216F2383607C007BF9BA /* PlayViewController.swift */,
 				5FB3216B238352C4007BF9BA /* GameViewController.swift */,
 				5FB3216D23835C7B007BF9BA /* FamilyViewController.swift */,
-				5FB3216F2383607C007BF9BA /* PlayViewController.swift */,
-				5F37BDEE238B2746000AE10B /* UploadViewController.swift */,
 				5FB3217123836674007BF9BA /* SecondViewController.swift */,
 				5FB3217323836A1C007BF9BA /* Griffins.swift */,
+				5F37BDEE238B2746000AE10B /* UploadViewController.swift */,
 				5F122744238B5D3F00F08811 /* ImageViewController.swift */,
 				5F122746238B621800F08811 /* ImageCell.swift */,
 				5F363666238C322A0019DAED /* LogoutViewController.swift */,
+				5F8DBAEC23C27D34007A4166 /* AddDoneKeyboard.swift */,
 			);
 			path = CatchTheStewie;
 			sourceTree = "<group>";
@@ -246,6 +249,7 @@
 				5FB321702383607C007BF9BA /* PlayViewController.swift in Sources */,
 				5F37BDEF238B2746000AE10B /* UploadViewController.swift in Sources */,
 				5FB3216C238352C4007BF9BA /* GameViewController.swift in Sources */,
+				5F8DBAED23C27D34007A4166 /* AddDoneKeyboard.swift in Sources */,
 				5FB3215423833ECB007BF9BA /* ViewController.swift in Sources */,
 				5F363667238C322A0019DAED /* LogoutViewController.swift in Sources */,
 				5FB3217223836674007BF9BA /* SecondViewController.swift in Sources */,

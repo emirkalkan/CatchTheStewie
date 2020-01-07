@@ -21,7 +21,7 @@ class ImageViewController: UIViewController, UITableViewDelegate, UITableViewDat
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        //navigationController?.navigationBar.topItem?.hidesBackButton = true //for hiding back button
         tableView.delegate = self
         tableView.dataSource = self
 
@@ -30,24 +30,16 @@ class ImageViewController: UIViewController, UITableViewDelegate, UITableViewDat
         getDataFromFirestore()
     }
     
-    @IBAction func buttonClicked(_ sender: Any) {
-        
-    }
-    
-    
     func getDataFromFirestore() {
         let firestoreDatabase = Firestore.firestore()
-        /*let settings = firestoreDatabase.settings
-        settings.areTimestampsInSnapshotsEnabled = true
-        firestoreDatabase.settings = settings*/ //if there will be a problem in date
         
-        firestoreDatabase.collection("Posts").order(by: "date", descending: true).addSnapshotListener { (snapshot, error) in
+        firestoreDatabase.collection("Posts").order(by: "date", descending: true).addSnapshotListener { (snapshot, error) in //ordering to date
             if error != nil {
                 print(error?.localizedDescription)
             } else {
                 if snapshot?.isEmpty != true && snapshot != nil {
                     
-                    self.userImageArray.removeAll(keepingCapacity: false)
+                    self.userImageArray.removeAll(keepingCapacity: false) //cleaning data arrays
                     self.userEmailArray.removeAll(keepingCapacity: false)
                     self.userCommentArray.removeAll(keepingCapacity: false)
                     
@@ -77,7 +69,7 @@ class ImageViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! ImageCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! ImageCell //for casting my imageCell and cells can reusable
         cell.backgroundColor = UIColor.systemYellow
         cell.userEmailLabel.text = "Email: \(userEmailArray[indexPath.row])"
         cell.commentLabel.text = "Comment: \(userCommentArray[indexPath.row])"

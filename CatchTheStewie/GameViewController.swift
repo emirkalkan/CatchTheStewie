@@ -100,7 +100,11 @@ class GameViewController: UIViewController {
         }
         
         let random = Int(arc4random_uniform(UInt32(UInt(stewieArray.count - 1))))
+        let random2 = Int(arc4random_uniform(UInt32(UInt(stewieArray.count - 1))))
+        let random3 = Int(arc4random_uniform(UInt32(UInt(stewieArray.count - 1))))
         stewieArray[random].isHidden = false;
+        stewieArray[random2].isHidden = false;
+        stewieArray[random3].isHidden = false;
     }
 
 

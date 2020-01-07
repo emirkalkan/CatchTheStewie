@@ -15,9 +15,9 @@ import UIKit
     var image : UIImage
     
     init(nameInit : String, jobInit : String, imageInit : UIImage) {
-        name = nameInit
-        job = jobInit
-        image = imageInit
+        self.name = nameInit
+        self.job = jobInit
+        self.image = imageInit
         
     }
 }

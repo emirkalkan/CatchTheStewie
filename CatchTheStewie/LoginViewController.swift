@@ -22,6 +22,10 @@ class LoginViewController: UIViewController {
         passwordText.isSecureTextEntry = true
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        navigationController?.navigationBar.topItem?.hidesBackButton = true
+    }
+    
     @IBAction func loginClicked(_ sender: Any) {
         
         if emailText.text != "" && passwordText.text != "" {
@@ -44,5 +48,9 @@ class LoginViewController: UIViewController {
          self.present(alert, animated: true, completion: nil)
 
     }
-    
+
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        passwordText.resignFirstResponder() //for dismiss keyboarda
+        emailText.resignFirstResponder()
+    }
 }

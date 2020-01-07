@@ -18,7 +18,7 @@ class UploadViewController: UIViewController, UIImagePickerControllerDelegate, U
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.commentText.addDoneButton(title: "Done", target: self, selector:#selector(tapDone(sender:)))
         // Do any additional setup after loading the view.
         imageView.isUserInteractionEnabled = true
         let gesturRecognizer = UITapGestureRecognizer(target: self, action: #selector(chooseImage))
@@ -33,7 +33,7 @@ class UploadViewController: UIViewController, UIImagePickerControllerDelegate, U
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        imageView.image = info[.originalImage] as? UIImage
+        imageView.image = info[.originalImage] as? UIImage  //finishing image picker job
         self.dismiss(animated: true, completion: nil)
     }
     
@@ -51,7 +51,7 @@ class UploadViewController: UIViewController, UIImagePickerControllerDelegate, U
         let mediaFolder = storageReference.child("media")
         
         if let data = imageView.image?.jpegData(compressionQuality: 0.5) {
-            let uuid = UUID().uuidString
+            let uuid = UUID().uuidString //for unique image name 
             let  imageReference = mediaFolder.child("\(uuid).jpg")
             imageReference.putData(data, metadata: nil) { (metadata, error) in
                 if error != nil {
@@ -59,7 +59,7 @@ class UploadViewController: UIViewController, UIImagePickerControllerDelegate, U
                 } else {
                     imageReference.downloadURL { (url, error) in
                         if error == nil {
-                            let imageUrl = url?.absoluteString
+                            let imageUrl = url?.absoluteString //our image url
                             
                             //Database
                             
@@ -74,12 +74,10 @@ class UploadViewController: UIViewController, UIImagePickerControllerDelegate, U
                                 } else {
                                     self.imageView.image = UIImage(named: "select.png")
                                     self.commentText.text = ""
-                                    self.performSegue(withIdentifier: "toImageSegue", sender: nil)
+                                    //self.performSegue(withIdentifier: "toImageSegue", sender: nil)
+                                    self.tabBarController?.selectedIndex = 0
                                 }
                             })
-                            
-                            
-                            
                         }
                     }
                 }
@@ -88,4 +86,7 @@ class UploadViewController: UIViewController, UIImagePickerControllerDelegate, U
         }
     }
     
+    @objc func tapDone(sender: Any) {
+        self.view.endEditing(true)
+    }
 }

@@ -25,6 +25,10 @@ class SignUpViewController: UIViewController {
         confirmPasswordText.isSecureTextEntry = true
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        navigationController?.navigationBar.topItem?.hidesBackButton = true
+    }
+    
     @IBAction func signUpClicked(_ sender: Any) {
         
         if  emailText.text != "" && passwordText.text != "" && confirmPasswordText.text != "" {
@@ -50,6 +54,12 @@ class SignUpViewController: UIViewController {
          let okButon = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil)
          alert.addAction(okButon)
          self.present(alert, animated: true, completion: nil)
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        passwordText.resignFirstResponder() //for dismiss keyboarda
+        emailText.resignFirstResponder()
+        confirmPasswordText.resignFirstResponder()
     }
     
     
